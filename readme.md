@@ -1,18 +1,16 @@
 ## Use a MySQL database in a Spring Boot Web Application through Hibernate
 
-See here for more informations: 
-http://blog.netgloo.com/2014/08/17/use-mysql-database-in-a-spring-boot-web-application-through-hibernate/
+See here for demo: 
+http://ec2-52-221-238-204.ap-southeast-1.compute.amazonaws.com:8080/index.html#/
+
+Spring Boot reference
+http://docs.spring.io/spring-boot/docs/current-SNAPSHOT/reference/htmlsingle/
+
+
 
 ### Usage
 
 - Run the application and go on http://localhost:8080/
-- Use the following urls to invoke controllers methods and see the interactions
-  with the database:
-    * `/user/save?email=[email]&name=[name]`: create a new user with an 
-      auto-generated id and email and name as passed values.
-    * `/user/delete?id=[id]`: delete the user with the passed id.
-    * `/user/get-by-email?email=[email]`: retrieve the id for the user with the
-      passed email address.
 
 ### Build and run
 
@@ -35,3 +33,13 @@ Go on the project's root folder, then type:
 #### From Eclipse (Spring Tool Suite)
 
 Import as *Existing Maven Project* and run it as *Spring Boot App*.
+
+
+
+#### Creating an executable jar
+- Save your pom.xml and run mvn package from the command line.
+- If you look in the target directory you should see myproject-0.0.1-SNAPSHOT.jar.
+- To run that application, use the java -jar command.
+    $ java -jar target/myproject-0.0.1-SNAPSHOT.jar
+
+
