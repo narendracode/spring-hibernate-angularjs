@@ -1,0 +1,65 @@
+<div class='row'>
+	<div class='col-md-5 col-md-offset-2'>    
+		<h4>Enter Details</h4>
+		<h6>{{error}}</h6>
+		<form  class="form-horizontal meetupCreateForm"  name="loginForm">
+       			<span class="label label-danger" ng-if="errorExists" >{{loginErrorMessage}}</span>
+        		
+        		<div class="form-group" show-errors>
+            			<label>First Name</label>
+            			<input type="text" class="form-control" name="fName" ng-model="fName"  id="fName" required>
+            			<p class="help-block" ng-if="loginForm.fName.$error.required">
+               				Please enter your first Name.
+            			</p>
+        		</div>
+
+        		<div class="form-group" show-errors>
+            			<label>Last Name</label>
+            			<input type="text" class="form-control" name="lName" ng-model="lName"  id="lName" required>
+            			<p class="help-block" ng-if="loginForm.lName.$error.required">
+               				Please enter your Last Name.
+            			</p>
+        		</div>
+        		
+        		
+        	   <div class="form-group" show-errors>
+            		<label>Email</label>
+            		<input type="email" class="form-control" name="email" ng-model="email" id="email" required >
+            		<p class="help-block" ng-if="loginForm.email.$error.required">
+              			 Please enter your email.
+             		</p>
+            		<p class="help-block" ng-show="loginForm.email.$error.email">
+               			Please enter valid email.
+             		</p>
+        	  </div>
+        	  
+        	          		
+        		<div class="form-group" show-errors>
+            			<label>Mobile Code</label>
+            			<input type="text" class="form-control" name="mCode" ng-model="mCode"  id="mCode" required only-digits>
+            			<p class="help-block" ng-if="loginForm.mCode.$error.required">
+               				Please enter your Mobile Code.
+            			</p>
+        		</div>
+        		
+        		        		
+        		<div class="form-group" show-errors>
+            			<label>Mobile Number</label>
+            			<input type="text" class="form-control" name="mNumber" ng-model="mNumber"  id="mNumber" required only-digits maxlength="8">
+            			<p class="help-block" ng-if="loginForm.mNumber.$error.required">
+               				Please enter your Mobile Number.
+            			</p>
+        		</div>
+
+        		<button type="submit" class="btn btn-info btn-lg" ng-click="save()">Save</button>
+		</form>
+
+		
+	</div>
+	
+		<div class='col-md-5 col-md-offset-2'>    
+			<h4>Stored Users</h4>
+			 <div custom-accordion ng-model="collapseData" collapse-panel-id="collapse-panel" collapse-panel-body-id="collapse-panel-body"></div>
+			
+		</div>
+</div>
